@@ -149,64 +149,6 @@ describe('socket.io', function(){
   });
 
   describe('server attachment', function(){
-    describe('http.Server', function(){
-      var clientVersion = require('socket.io-client/package').version;
-
-      it('should serve static files', function(done){
-        var srv = http();
-        io(srv);
-        request(srv)
-        .get('/socket.io/socket.io.js')
-        .buffer(true)
-        .end(function(err, res){
-          if (err) return done(err);
-          var ctype = res.headers['content-type'];
-          expect(ctype).to.be('application/javascript');
-          expect(res.headers.etag).to.be('"' + clientVersion + '"');
-          expect(res.text).to.match(/engine\.io/);
-          expect(res.status).to.be(200);
-          done();
-        });
-      });
-
-      it('should handle 304', function(done){
-        var srv = http();
-        io(srv);
-        request(srv)
-        .get('/socket.io/socket.io.js')
-        .set('If-None-Match', '"' + clientVersion + '"')
-        .end(function(err, res){
-          if (err) return done(err);
-          expect(res.statusCode).to.be(304);
-          done();
-        });
-      });
-
-      it('should not serve static files', function(done){
-        var srv = http();
-        io(srv, { serveClient: false });
-        request(srv)
-        .get('/socket.io/socket.io.js')
-        .expect(400, done);
-      });
-
-      it('should work with #attach', function(done){
-        var srv = http(function(req, res){
-          res.writeHead(404);
-          res.end();
-        });
-        var sockets = io();
-        sockets.attach(srv);
-        request(srv)
-        .get('/socket.io/socket.io.js')
-        .end(function(err, res){
-          if (err) return done(err);
-          expect(res.status).to.be(200);
-          done();
-        });
-      });
-    });
-
     describe('port', function(done){
       it('should be bound', function(done){
         var sockets = io(54010);
