@@ -1,7 +1,7 @@
 {
-  "name": "socket.io",
+  "name": "socket.io-server",
   "version": "2.3.0",
-  "description": "node.js realtime framework server",
+  "description": "node.js realtime framework server only",
   "keywords": [
     "realtime",
     "framework",
