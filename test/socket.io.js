@@ -148,38 +148,6 @@ describe('socket.io', function(){
     });
   });
 
-  describe('server attachment', function(){
-    describe('port', function(done){
-      it('should be bound', function(done){
-        var sockets = io(54010);
-        request('http://localhost:54010')
-        .get('/socket.io/socket.io.js')
-        .expect(200, done);
-      });
-
-      it('should be bound as a string', function(done) {
-        var sockets = io('54020');
-        request('http://localhost:54020')
-        .get('/socket.io/socket.io.js')
-        .expect(200, done);
-      });
-
-      it('with listen', function(done){
-        var sockets = io().listen(54011);
-        request('http://localhost:54011')
-        .get('/socket.io/socket.io.js')
-        .expect(200, done);
-      });
-
-      it('as a string', function(done){
-        var sockets = io().listen('54012');
-        request('http://localhost:54012')
-        .get('/socket.io/socket.io.js')
-        .expect(200, done);
-      });
-    });
-  });
-
   describe('handshake', function(){
     var request = require('superagent');
 
