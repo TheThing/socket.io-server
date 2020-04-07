@@ -1,18 +1,18 @@
 
-# socket.io
+# socket.io-serveronly
 
-[![Backers on Open Collective](https://opencollective.com/socketio/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/socketio/sponsors/badge.svg)](#sponsors)
-[![Build Status](https://secure.travis-ci.org/socketio/socket.io-server.svg?branch=master)](https://travis-ci.org/socketio/socket.io-server)
-[![Dependency Status](https://david-dm.org/socketio/socket.io-server.svg)](https://david-dm.org/socketio/socket.io-server)
-[![devDependency Status](https://david-dm.org/socketio/socket.io-server/dev-status.svg)](https://david-dm.org/socketio/socket.io-server#info=devDependencies)
-[![NPM version](https://badge.fury.io/js/socket.io-server.svg)](https://www.npmjs.com/package/socket.io-server)
-![Downloads](https://img.shields.io/npm/dm/socket.io-server.svg?style=flat)
+A fork of socket.io but without the client package which trims the dependencies installed by quite a lot.
+
+[![Build Status](https://travis-ci.com/TheThing/socket.io-serveronly.svg?branch=master)](https://travis-ci.com/TheThing/socket.io-serveronly)
+[![NPM version](https://badge.fury.io/js/socket.io-serveronly.svg)](https://www.npmjs.com/package/socket.io-serveronly)
 
 ## Features
 
 Socket.IO enables real-time bidirectional event-based communication. It consists of:
 
 - a Node.js server (this repository)
+
+The client can be found in the following package:
 - a [Javascript client library](https://github.com/socketio/socket.io-client) for the browser (or a Node.js client)
 
 Some implementations in other languages are also available:
